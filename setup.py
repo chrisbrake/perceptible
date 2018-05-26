@@ -5,6 +5,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 
+github_url = 'https://github.com/chrisbrake/perceptible'
+
 setup(
     name='perceptible',
     packages=['perceptible'],
@@ -14,8 +16,8 @@ setup(
     long_description_content_type="text/markdown",
     author='Chris Brake',
     author_email='chris.brake@gmail.com',
-    url='https://github.com/chrisbrake/perceptible',
-    download_url='https://github.com/chrisbrake/perceptible/archive/0.1.tar.gz',
+    url=github_url,
+    download_url='%s/archive/0.1.tar.gz' % github_url,
     keywords=['perceptible', 'observable', 'observer'],
     classifiers=[],
 )
