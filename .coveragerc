@@ -1,2 +1,5 @@
+[run]
+source = perceptible/
+
 [report]
-omit = */_verison.py
+omit = perceptible/_verison.py
