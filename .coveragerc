@@ -1,5 +1,3 @@
 [run]
-source = perceptible/
-
-[report]
-omit = perceptible/_verison.py
+source = perceptible
+omit = perceptible/_version.py
