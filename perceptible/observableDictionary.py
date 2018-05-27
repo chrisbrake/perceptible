@@ -63,8 +63,11 @@ class ObservableDictionary(MutableMapping):
         self.notify_observers()
 
     def __delitem__(self, key):
-        del self._dict[key]
-        self.notify_observers()
+        try:
+            del self._dict[key]
+            self.notify_observers()
+        except KeyError:
+            pass
 
     def __iter__(self):
         return iter(self._dict)
