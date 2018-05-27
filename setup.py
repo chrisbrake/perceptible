@@ -1,3 +1,4 @@
+import versioneer
 from distutils.core import setup
 
 
@@ -7,10 +8,12 @@ with open("README.md", "r") as fh:
 
 github_url = 'https://github.com/chrisbrake/perceptible'
 
+
 setup(
     name='perceptible',
     packages=['perceptible'],
-    version='0.1',
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     description='Observable versions of python data structures',
     long_description=long_description,
     long_description_content_type="text/markdown",
