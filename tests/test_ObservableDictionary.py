@@ -28,6 +28,28 @@ class TestObservableDictionary(TestCase):
         self.assertEqual('value', o_dict.get('key'))
         self.assertIsNone(o_dict.get('not real'))
 
+    def test_del_absent_item(self):
+        """ Confirm behavior when an absent item is deleted """
+        mock_method = Mock()
+        o_dict = ObservableDictionary()
+        o_dict['key'] = 'value'
+        o_dict.add_observer(mock_method)
+        self.assertDictEqual({'key': 'value'}, dict(o_dict))
+        del o_dict['not real']
+        self.assertDictEqual({'key': 'value'}, dict(o_dict))
+        mock_method.assert_not_called()
+
+    def test_del_existing_item(self):
+        """ Confirm behavior when an item is deleted """
+        mock_method = Mock()
+        o_dict = ObservableDictionary()
+        o_dict['key'] = 'value'
+        self.assertDictEqual({'key': 'value'}, dict(o_dict))
+        o_dict.add_observer(mock_method)
+        del o_dict['key']
+        self.assertDictEqual({}, dict(o_dict))
+        mock_method.assert_called_once_with(o_dict)
+
     def test_add_observer(self):
         """ Confirm observers are added as expected """
         o_dict = ObservableDictionary()
@@ -49,6 +71,15 @@ class TestObservableDictionary(TestCase):
         o_dict.remove_observer(mock_method)
         self.assertSetEqual(set(), o_dict.observers)
         self.assertEqual(0, len(o_dict.observers))
+
+    def test_remove_absent_observer(self):
+        """ Confirm behavior upon attempt to remove an absent observer """
+        o_dict = ObservableDictionary()
+        mock_method = Mock()
+        o_dict.add_observer(mock_method)
+        o_dict.remove_observer('not real')
+        self.assertSetEqual({mock_method}, o_dict.observers)
+        mock_method.assert_not_called()
 
     def test_notify_observers(self):
         """ Confirm observers are notified as expected"""
