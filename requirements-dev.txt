@@ -2,4 +2,6 @@ coverage
 flake8
 mock
 python-coveralls
+sphinx
+sphinx-autobuild
 versioneer
