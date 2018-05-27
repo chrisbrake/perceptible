@@ -1,2 +1,2 @@
 [report]
-omit = perceptible/_verison.py
+omit = */_verison.py
