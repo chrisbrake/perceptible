@@ -32,11 +32,9 @@ class TestObservableDictionary(TestCase):
         """ Confirm behavior when an absent item is deleted """
         mock_method = Mock()
         o_dict = ObservableDictionary()
-        o_dict['key'] = 'value'
         o_dict.add_observer(mock_method)
-        self.assertDictEqual({'key': 'value'}, dict(o_dict))
-        del o_dict['not real']
-        self.assertDictEqual({'key': 'value'}, dict(o_dict))
+        with self.assertRaises(KeyError):
+            del o_dict['not real']
         mock_method.assert_not_called()
 
     def test_del_existing_item(self):
@@ -77,7 +75,8 @@ class TestObservableDictionary(TestCase):
         o_dict = ObservableDictionary()
         mock_method = Mock()
         o_dict.add_observer(mock_method)
-        o_dict.remove_observer('not real')
+        with self.assertRaises(KeyError):
+            o_dict.remove_observer('not real')
         self.assertSetEqual({mock_method}, o_dict.observers)
         mock_method.assert_not_called()
 

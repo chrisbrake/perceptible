@@ -23,10 +23,7 @@ class ObservableDictionary(MutableMapping):
         Remove an observer from this instance of this data structure.
         :param observer: The method to remove, so it will no longer be notified
         """
-        try:
-            self.observers.remove(observer)
-        except KeyError:
-            pass
+        self.observers.remove(observer)
 
     def notify_observers(self):
         """
@@ -63,11 +60,8 @@ class ObservableDictionary(MutableMapping):
         self.notify_observers()
 
     def __delitem__(self, key):
-        try:
-            del self._dict[key]
-            self.notify_observers()
-        except KeyError:
-            pass
+        del self._dict[key]
+        self.notify_observers()
 
     def __iter__(self):
         return iter(self._dict)
