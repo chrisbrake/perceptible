@@ -1,5 +1,5 @@
 import versioneer
-from distutils.core import setup
+from setuptools import setup
 
 
 with open('README.rst', 'r') as fh:
