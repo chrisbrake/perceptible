@@ -2,7 +2,7 @@ import versioneer
 from distutils.core import setup
 
 
-with open("README.md", "r") as fh:
+with open('README.rst', 'r') as fh:
     long_description = fh.read()
 
 
@@ -16,7 +16,7 @@ setup(
     cmdclass=versioneer.get_cmdclass(),
     description='Observable versions of python data structures',
     long_description=long_description,
-    long_description_content_type="text/markdown",
+    long_description_content_type='text/markdown',
     author='Chris Brake',
     author_email='chris.brake@gmail.com',
     url=github_url,
