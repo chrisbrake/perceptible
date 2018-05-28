@@ -16,7 +16,7 @@ setup(
     cmdclass=versioneer.get_cmdclass(),
     description='Observable versions of python data structures',
     long_description=long_description,
-    long_description_content_type='text/markdown',
+    long_description_content_type='text/x-rst',
     author='Chris Brake',
     author_email='chris.brake@gmail.com',
     url=github_url,
