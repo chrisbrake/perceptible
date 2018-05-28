@@ -1,9 +1,9 @@
 perceptible
 ===========
 
-|Build Status| |Coverage Status| |Docs Status|
-
 Observable versions of python data structures
+
+|Build Status| |Coverage Status| |Docs Status|
 
 .. |Build Status| image:: https://travis-ci.org/chrisbrake/perceptible.svg?branch=master
    :target: https://travis-ci.org/chrisbrake/perceptible
