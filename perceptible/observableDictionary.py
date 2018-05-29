@@ -1,5 +1,7 @@
 from collections.abc import MutableMapping
 
+__module__ = 'perceptible'
+
 
 class ObservableDictionary(MutableMapping):
     """
@@ -12,15 +14,18 @@ class ObservableDictionary(MutableMapping):
         Add an observer to this data structure, the observer will be called
         whenever this instance of this data structure is modified, with this
         data structure as the only argument.
-        :param observer: Method that should be called when this data structure
-        changes.
+
+        :param Method observer:
+            The method that should be called when this data structure changes.
         """
         self.observers.add(observer)
 
     def remove_observer(self, observer):
         """
         Remove an observer from this instance of this data structure.
-        :param observer: The method to remove, so it will no longer be notified
+
+        :param Method observer:
+            The method to remove, so it will no longer be notified
         """
         self.observers.remove(observer)
 

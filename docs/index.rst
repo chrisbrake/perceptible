@@ -10,7 +10,13 @@ Welcome to Perceptible's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+Perceptible module
+=====================
 
+.. automodule:: perceptible
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
 Indices and tables
 ==================
