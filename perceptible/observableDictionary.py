@@ -1,4 +1,3 @@
-import json
 from collections.abc import MutableMapping
 
 
@@ -14,7 +13,7 @@ class ObservableDictionary(MutableMapping):
         whenever this instance of this data structure is modified, with this
         data structure as the only argument.
         :param observer: Method that should be called when this data structure
-            changes.
+        changes.
         """
         self.observers.add(observer)
 
@@ -32,20 +31,6 @@ class ObservableDictionary(MutableMapping):
         """
         for observer in self.observers:
             observer(self)
-
-    def as_json(self):
-        """
-        Converts the data stored in this object to a json string.
-        :return: String, JSON compatible
-        """
-        return json.dumps(self.as_dict())
-
-    def as_dict(self):
-        """
-        Converts the data stored in this object to a standard dictionary.
-        :return: Dictionary
-        """
-        return self._dict
 
     def __init__(self, *args, **kwargs):
         self.observers = set()

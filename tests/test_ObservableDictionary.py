@@ -112,10 +112,5 @@ class TestObservableDictionary(TestCase):
         """ Test conversion to a standard dictionary """
         o_dict = ObservableDictionary()
         o_dict['key'] = 'value'
-        self.assertDictEqual({"key": "value"}, o_dict.as_dict())
-
-    def test_json_conversion(self):
-        """ Test conversion to a JSON string """
-        o_dict = ObservableDictionary()
-        o_dict['key'] = 'value'
-        self.assertEqual('{"key": "value"}', o_dict.as_json())
+        self.assertDictEqual({"key": "value"}, o_dict._dict)
+        self.assertDictEqual({"key": "value"}, dict(o_dict))
