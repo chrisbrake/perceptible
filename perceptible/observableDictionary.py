@@ -1,4 +1,7 @@
-from collections.abc import MutableMapping
+try:
+    from collections.abc import MutableMapping
+except ImportError:
+    from collections import MutableMapping
 
 __module__ = 'perceptible'
 
