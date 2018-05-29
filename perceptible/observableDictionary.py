@@ -1,7 +1,5 @@
 from collections.abc import MutableMapping
 
-__module__ = 'perceptible'
-
 
 class ObservableDictionary(MutableMapping):
     """
