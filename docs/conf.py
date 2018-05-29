@@ -15,7 +15,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../perceptible'))
-import perceptible
+import perceptible  # noqa: E402
 
 # -- Project information -----------------------------------------------------
 
