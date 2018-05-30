@@ -6,9 +6,6 @@ with open('README.rst', 'r') as fh:
     long_description = fh.read()
 
 
-github_url = 'https://github.com/chrisbrake/perceptible'
-
-
 setup(
     name='perceptible',
     packages=['perceptible'],
@@ -19,8 +16,11 @@ setup(
     long_description_content_type='text/x-rst',
     author='Chris Brake',
     author_email='chris.brake@gmail.com',
-    url=github_url,
-    download_url='%s/archive/0.1.tar.gz' % github_url,
+    url='https://github.com/chrisbrake/perceptible',
     keywords=['perceptible', 'observable', 'observer'],
-    classifiers=[],
+    classifiers=[
+        'License :: OSI Approved :: BSD License',
+        'Programming Language :: Python',
+        'Topic :: Software Development :: Libraries'
+    ],
 )
