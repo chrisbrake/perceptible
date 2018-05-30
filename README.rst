@@ -11,5 +11,5 @@ Observable versions of python data structures
    :target: https://coveralls.io/github/chrisbrake/perceptible?branch=master
 .. |Docs Status| image:: https://readthedocs.org/projects/perceptible/badge/?version=latest
    :target: https://perceptible.readthedocs.io/en/latest/
-.. |Wheel Status| image:: https://img.shields.io/pypi/wheel/Django.svg
-   :target: https://pypi.org/project/perceptible/
+.. |Wheel Status| image:: https://badge.fury.io/py/perceptible.svg
+    :target: https://badge.fury.io/py/perceptible
