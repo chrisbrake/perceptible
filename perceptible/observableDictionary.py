@@ -56,3 +56,9 @@ class ObservableDictionary(MutableMapping):
 
     def __len__(self):
         return len(self._dict)
+
+    def __repr__(self):
+        return self._dict.__repr__()
+
+    def __str__(self):
+        return self._dict.__str__()

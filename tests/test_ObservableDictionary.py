@@ -114,3 +114,15 @@ class TestObservableDictionary(TestCase):
         o_dict['key'] = 'value'
         self.assertDictEqual({"key": "value"}, o_dict._dict)
         self.assertDictEqual({"key": "value"}, dict(o_dict))
+
+    def test_repr(self):
+        """ Test conversion to a standard dictionary """
+        std_dict = {'key': 'value'}
+        o_dict = ObservableDictionary(std_dict)
+        self.assertEqual(repr(std_dict), repr(o_dict))
+
+    def test_str(self):
+        """ Test conversion to a standard dictionary """
+        std_dict = {'key': 'value'}
+        o_dict = ObservableDictionary(std_dict)
+        self.assertEqual(str(std_dict), str(o_dict))
