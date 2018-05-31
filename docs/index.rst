@@ -1,14 +1,14 @@
-Perceptible's documentation
-=======================================
+Contents
+^^^^^^^^
 
-.. automodule:: perceptible
-    :members:
-    :undoc-members:
-    :show-inheritance:
+.. toctree::
+    :maxdepth: 2
+
+    modules.rst
+    readme.rst
 
 Indices and tables
-==================
-
+^^^^^^^^^^^^^^^^^^
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
