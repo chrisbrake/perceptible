@@ -1,6 +1,6 @@
 from mock import Mock
 from unittest import TestCase
-from perceptible.observableDictionary import ObservableDictionary
+from perceptible import ObservableDictionary
 
 
 class TestObservableDictionary(TestCase):
