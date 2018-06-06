@@ -116,5 +116,10 @@ class TestObservableLst(TestCase):
         o_list.append('b')
         mock_method.assert_called_once_with(o_list)
         o_list.insert(0, 'a')
+        self.assertEqual(2, mock_method.call_count)
         mock_method.assert_called_with(o_list)
         self.assertListEqual(['a', 'b'], o_list._list)
+        o_list[1] = 'c'
+        mock_method.assert_called_with(o_list)
+        self.assertEqual(3, mock_method.call_count)
+        self.assertListEqual(['a', 'c'], o_list._list)
