@@ -83,3 +83,38 @@ class TestObservableLst(TestCase):
         o_list = ObservableList(test_data)
         for o_item, item in zip(o_list, test_data):
             self.assertEqual(item, o_item)
+
+    def test_add_observer(self):
+        """ Confirm observers are added as expected """
+        o_list = ObservableList()
+        mock_method = Mock()
+        o_list.add_observer(mock_method)
+        self.assertSetEqual({mock_method}, o_list.observers)
+        self.assertEqual(1, len(o_list.observers))
+
+    def test_add_remove_observer(self):
+        """ Confirm observers are added and removed expected """
+        o_list = ObservableList()
+        mock_method = Mock()
+        o_list.add_observer(mock_method)
+        self.assertSetEqual({mock_method}, o_list.observers)
+        self.assertEqual(1, len(o_list.observers))
+        o_list.add_observer(mock_method)
+        self.assertSetEqual({mock_method}, o_list.observers)
+        self.assertEqual(1, len(o_list.observers))
+        o_list.remove_observer(mock_method)
+        self.assertSetEqual(set(), o_list.observers)
+        self.assertEqual(0, len(o_list.observers))
+
+    def test_observer_notified(self):
+        """ Confirm observers are notified as expected """
+        o_list = ObservableList()
+        mock_method = Mock()
+        o_list.add_observer(mock_method)
+        self.assertSetEqual({mock_method}, o_list.observers)
+        self.assertEqual(1, len(o_list.observers))
+        o_list.append('b')
+        mock_method.assert_called_once_with(o_list)
+        o_list.insert(0, 'a')
+        mock_method.assert_called_with(o_list)
+        self.assertListEqual(['a', 'b'], o_list._list)

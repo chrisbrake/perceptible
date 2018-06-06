@@ -16,6 +16,7 @@ class ObservableList(Observable, MutableSequence):
 
     def insert(self, index, item):
         self._list.insert(index, item)
+        self.notify_observers()
         return self
 
     def __getitem__(self, key):
