@@ -16,7 +16,7 @@ Observable versions of python data structures
 
 .. quick-start-section-marker
 
-This library is meant to be API compatible with a standard Python objects, but with the addition of observability.  Currently supports Lists and Dictionaries.
+This library is meant to be API compatible with standard Python objects, but with the addition of observability.  Currently supports Lists and Dictionaries.
 
 A simple use looks like this:
 
@@ -30,6 +30,7 @@ A simple use looks like this:
     >>> o_dict.add_observer(observer)
     >>> o_dict['key'] = 'value'
     observer was called with {'key': 'value'}
+
 
 Installation is as simple as installing via pip.
 
