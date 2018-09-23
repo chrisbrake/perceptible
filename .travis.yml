@@ -1,30 +1,23 @@
 sudo: false
-
 language: python
-
 python:
-  - 2.7
-  - 3.6
-
+- 2.7
+- 3.6
 install:
-  - pip install -r requirements.txt
-  - pip install -r requirements-dev.txt
-
+- pip install -r requirements.txt
+- pip install -r requirements-dev.txt
 before_script:
-  - flake8 .
-
+- flake8 .
 script:
-  - python -m unittest discover -s tests/
-  - coverage run -m unittest discover -s tests/
-
+- python -m unittest discover -s tests/
+- coverage run -m unittest discover -s tests/
 after_success:
-  - coveralls
-
+- coveralls
 deploy:
   provider: pypi
   user: chrisbrake
   password:
-    secure: W5CHF7WkNX4HYnKeJXAIKRuEaybNfPx76S5WGCZfl92qLzAiJ/yDOIVHSLTa1mqPl9JOMWDCFaMMtAFPVtEbTw8NUBQbMJgRTwGmTGW3+fWuyW+fdJIR/HUcP2GnJ43jm9xloxlIfeVxanMYjBOuOcHBuANwlfMvm5/pVjw5jbsK1xIFqKL+BWw1NwpUhQhV0M8MKZtrfYUZSE5AdgWkrnaotrpp8cDVKUiC2ejRleMRWDB2oCCVCMU0bIcB+VLdi2OIQJXvWV+KcsbZzZO3A2/GdcgMZgrBE4QxZ5mtFqqReUHj6lr+LkhvD5zutlN5df7vvn2SV0UbbLmtXt1Evqhrosbic9Q4UPs/AX5WIyYA9DEO75EI6EbYNnxkwgb85w+cL0eYUN6IO3tn1luFzjz9M7SDPilQkXPGloUAXafavm9F5rwTMAnR1KOImZIkngn+3sdDvxjTKhwCNUklKx/74R8m/qKQ6EYbRDKgzbaBnlOx3R/72jizYVLcMAo42s8DjwZaihvSwaf92JUir6INBrIh7yCcG/o+kQ5+Z+SGnt0Q5XC/KqaVD2ByA85OEB52dc6cTedBydAkMq/bnePLTRu+sWxKVMQEbbG7HF42DdhbymjIq/x5HALAeYdGZLostWb9qqvJxI7le3iwOus/+lkwtZh/gTyp2rnV5dg=
-  distributions: "bdist_wheel"
+    secure: HEDasAfMUaIoDeiUWlFNsGyd7p4Tg5xKzH8xnSIVYTPHIHDllDeNVrTmNNyvsyf75uc8vGzzy7RnSB/xSIX/TJ0lX1wJCT/lleecig22hLhXkSmfofg+7zIQ2aSbPluKtb7cpEolS310Dd8e8DdYqDEnOZqPjEZXEXmHqnJAzk5BJQmaVQBWcrH20tVDhWTZIVRJFU44g32neVhKL7sKybJtw3DR3H1w1Y+ZtQywNOonHTxhsxeX+OGoVMbJq4VOKbhj84VjmLixfHrk9tobR5N7rCglZCpKMntiszaUV8l0YmbjFtyXghDqt/RuXeUQADYXk1AnZJcGDdP6qfRZcBe39o4sh67AXS1hqBwO4z4ltr4uQsSSH/b18ywSGnDGZL42PzgRvl7whSdpBjF0b+H0S9klS1idF7YCbXHz7JWuGMkzfiD19HHUjl/ut24WJf+bg1fuEsBBcZ5LstU2GNAubrNxL2ypGKPcr2LCvu30M2qQ3iuuFs89htIECQweren7h0+ry1aEzjj1p8tPVLZlweLQ3q0WcVlht9ArHeCX5PwCYW/Rfp59eO0bGtP5o99f8gHUKqv/SctHck/wruZWITs8HmJylSjf51TQOoVkIW2qyuRtKruQ8LtMv1/G5rLxWwcYzDR6B7jxr4zjI80af6Oe/CxfqdqbW51p3UM=
+  distributions: sdist bdist_wheel
   on:
     tags: true
