@@ -1,4 +1,0 @@
-[run]
-branch = True
-source = perceptible
-omit = perceptible/_version.py
